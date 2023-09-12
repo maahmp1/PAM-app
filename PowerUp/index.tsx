@@ -1,38 +1,62 @@
 import React from "react";
-import { Image, StyleSheet, Text, Dimensions, View } from "react-native";
+import { Image, StyleSheet, Text, Dimensions, View, } from "react-native";
 import logo from "../assets/logo.png";
 import topo from "../assets/topo.png";
+import Card from '../shared/card';
+
+import LinearGradient from 'react-native';
+
 
 const width = Dimensions.get("screen").width;
 
 export default function PowerUp() {
   return (
     <>
-      <Image source={topo} style={estilos.topo} />
-      <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
+      <View style={estilos.back}>
+        <Image source={topo} style={estilos.topo} />
+        <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
 
-      <View style={estilos.carrinho}>
-        <Text style={estilos.nome}>Carrinho de Compras</Text>
 
-        <View style={estilos.teste}>
-          <View style={estilos.produto}>
-            <Image style={logo} source={logo}></Image>
-          </View>
-
-          <View>
-            <Text style={estilos.nomeProduto}>Power Up</Text>
-
-            <Text style={estilos.descricao}>
-              Uma creatina importada da Alemanha
-            </Text>
-          </View>
+        <View style={estilos.carrinho}>
+          <Text style={estilos.nome}>Carrinho de Compras</Text>
+          <Card>
+            <View style={estilos.teste}>
+              <View style={estilos.produto}>
+                <Image style={estilos.logo} source={logo}></Image>
+                <Text style={estilos.descricao}>
+                  Creatina importada da Alemanha, vendida por Power UP Suplementos.
+                </Text>
+                 <Text style={estilos.preco}>R$80,00</Text> 
+              </View>
+            </View>
+          </Card>
         </View>
-        <Text style={estilos.preco}>R$80,00</Text>
+        {/* <LinearGradient
+          colors={['purple', 'white']}
+          style={estilos.container}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        >
+          <Text>Home Screen</Text>
+        </LinearGradient> */}
       </View>
     </>
+
   );
 }
 const estilos = StyleSheet.create({
+
+  back: {
+    backgroundColor: "#D4D4D4",
+    height: "100%",
+  },
+
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
   topo: {
     width: "100%",
     height: (578 / 768) * width,
@@ -40,7 +64,7 @@ const estilos = StyleSheet.create({
 
   titulo: {
     width: "100%",
-    fontFamily: "FMedium",
+    fontFamily: "FRegular",
     position: "absolute",
     color: "white",
     textAlign: "center",
@@ -60,6 +84,8 @@ const estilos = StyleSheet.create({
     lineHeight: 42,
     color: "#464646",
     fontFamily: "FBold",
+    textAlign: "center",
+
   },
 
   teste: {
@@ -67,13 +93,17 @@ const estilos = StyleSheet.create({
   },
 
   produto: {
-    flexDirection: "row",
+    // flexDirection: "row",
     paddingVertical: 12,
+    textAlign: "center"
   },
 
   logo: {
-    width: 32,
-    height: 32,
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "auto",
+    marginTop: "0%",
+    left: 115
   },
 
   nomeProduto: {
@@ -86,14 +116,18 @@ const estilos = StyleSheet.create({
   descricao: {
     color: "#A3A3A3",
     fontFamily: "FRegular",
-
     marginLeft: 10,
+    textAlign: "center"
   },
 
   preco: {
     fontSize: 26,
     fontFamily: "FMedium",
     color: "#2A9F85",
-    marginTop: 8,
+    marginTop: 15,
+    marginBottom: 15,
+    textAlign:"center",
+    
   },
+
 });

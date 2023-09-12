@@ -15,6 +15,8 @@ export default function App() {
     FBold: Fredoka_600SemiBold,
   });
 
+
+
   if (!fonteCarregada) {
     return null;
   }
