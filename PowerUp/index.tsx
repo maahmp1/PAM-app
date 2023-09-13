@@ -103,8 +103,8 @@ const estilos = StyleSheet.create({
   logo: { //produto que aparece no carrinho
     margin: 15,
     marginTop: "0%",
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     alignItems: "center",
     justifyContent: "center",
     left:110
