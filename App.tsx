@@ -1,4 +1,4 @@
-import { SafeAreaView, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, StatusBar } from "react-native";
 import PowerUp from "./PowerUp";
 import React from "react";
 import {
@@ -15,16 +15,24 @@ export default function App() {
     FBold: Fredoka_600SemiBold,
   });
 
+  const estilos = StyleSheet.create({
+
+    safeAreaView:{
+      flex: 1,
+      backgroundColor:"#D4D4D4"
+    }
+    
+})
 
 
-  if (!fonteCarregada) {
-    return null;
-  }
+if (!fonteCarregada) {
+  return null;
+}
 
-  return (
-    <SafeAreaView>
-      <PowerUp />
-      <StatusBar />
-    </SafeAreaView>
-  );
+return (
+  <SafeAreaView style={estilos.safeAreaView}>
+    <PowerUp />
+    <StatusBar />
+  </SafeAreaView>
+);
 }

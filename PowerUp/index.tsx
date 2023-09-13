@@ -3,8 +3,10 @@ import { Image, StyleSheet, Text, Dimensions, View, } from "react-native";
 import logo from "../assets/logo.png";
 import topo from "../assets/topo.png";
 import Card from '../shared/card';
-
+import maxLogo from '../assets/maxLogo.png'
 import LinearGradient from 'react-native';
+import creatine from '../assets/creatine.png';
+import wheyMax from '../assets/wheyMax.png';
 
 
 const width = Dimensions.get("screen").width;
@@ -12,9 +14,9 @@ const width = Dimensions.get("screen").width;
 export default function PowerUp() {
   return (
     <>
-      <View style={estilos.back}>
-        <Image source={topo} style={estilos.topo} />
-        <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
+      <View >
+        <Image source={logo} style={estilos.topo} />
+        {/* <Text style={estilos.titulo}>Detalhes do Carrinho</Text> */}
 
 
         <View style={estilos.carrinho}>
@@ -22,34 +24,33 @@ export default function PowerUp() {
           <Card>
             <View style={estilos.teste}>
               <View style={estilos.produto}>
-                <Image style={estilos.logo} source={logo}></Image>
-                <Text style={estilos.descricao}>
-                  Creatina importada da Alemanha, vendida por Power UP Suplementos.
+                <Image style={estilos.logo} source={creatine}></Image>
+                <Text style={estilos.descricao2}>
+                  Creatina Importada 150g - Max Titanium
                 </Text>
-                 <Text style={estilos.preco}>R$80,00</Text> 
+                <Text style={estilos.preco2}>R$40,00</Text>
+              </View>
+            </View>
+          </Card>
+
+          <Card>
+            <View style={estilos.teste}>
+              <View style={estilos.produto}>
+                <Image style={estilos.logo} source={wheyMax}></Image>
+                <Text style={estilos.descricao}>
+                  100% Whey Protein 900g - Max Titanium                </Text>
+                <Text style={estilos.preco}>R$80,00</Text>
               </View>
             </View>
           </Card>
         </View>
-        {/* <LinearGradient
-          colors={['purple', 'white']}
-          style={estilos.container}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-        >
-          <Text>Home Screen</Text>
-        </LinearGradient> */}
+
       </View>
     </>
 
   );
 }
 const estilos = StyleSheet.create({
-
-  back: {
-    backgroundColor: "#D4D4D4",
-    height: "100%",
-  },
 
   container: {
     flex: 1,
@@ -77,6 +78,7 @@ const estilos = StyleSheet.create({
   carrinho: {
     paddingVertical: 8,
     paddingHorizontal: 16,
+
   },
 
   nome: {
@@ -85,6 +87,7 @@ const estilos = StyleSheet.create({
     color: "#464646",
     fontFamily: "FBold",
     textAlign: "center",
+    marginBottom: 10
 
   },
 
@@ -93,18 +96,29 @@ const estilos = StyleSheet.create({
   },
 
   produto: {
-    // flexDirection: "row",
     paddingVertical: 12,
     textAlign: "center"
   },
 
-  logo: {
+  logo: { //produto que aparece no carrinho
+    margin: 15,
+    marginTop: "0%",
+    width: 80,
+    height: 80,
     alignItems: "center",
     justifyContent: "center",
-    margin: "auto",
-    marginTop: "0%",
-    left: 115
+    left:110
+
   },
+
+  // product: {
+  //   flex:1,
+  //   flexDirection: "row",
+
+  //   marginTop: "0%",
+  //   width: 80,
+  //   height: 80
+  // },
 
   nomeProduto: {
     fontSize: 16,
@@ -117,7 +131,15 @@ const estilos = StyleSheet.create({
     color: "#A3A3A3",
     fontFamily: "FRegular",
     marginLeft: 10,
-    textAlign: "center"
+    textAlign: "center",
+
+  },
+  descricao2: {
+    color: "#A3A3A3",
+    fontFamily: "FRegular",
+    marginLeft: 20,
+    textAlign: "center",
+
   },
 
   preco: {
@@ -125,9 +147,19 @@ const estilos = StyleSheet.create({
     fontFamily: "FMedium",
     color: "#2A9F85",
     marginTop: 15,
-    marginBottom: 15,
-    textAlign:"center",
-    
+    marginBottom: 5,
+    textAlign: "center",
+
+  },
+  preco2: {
+    fontSize: 26,
+    fontFamily: "FMedium",
+    color: "#2A9F85",
+    marginTop: 15,
+    marginBottom: 5,
+    marginLeft:15,
+    textAlign: "center",
+
   },
 
 });
