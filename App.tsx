@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet, StatusBar } from "react-native";
-import PowerUp from "./PowerUp";
+import PowerUp from "./pages";
 import React from "react";
 import {
   useFonts,
@@ -15,7 +15,7 @@ export default function App() {
     FBold: Fredoka_600SemiBold,
   });
 
-  const estilos = StyleSheet.create({
+  const styles = StyleSheet.create({
 
     safeAreaView:{
       flex: 1,
@@ -30,7 +30,7 @@ if (!fonteCarregada) {
 }
 
 return (
-  <SafeAreaView style={estilos.safeAreaView}>
+  <SafeAreaView style={styles.safeAreaView}>
     <PowerUp />
     <StatusBar />
   </SafeAreaView>
