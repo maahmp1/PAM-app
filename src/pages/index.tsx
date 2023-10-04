@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, Dimensions, View, ScrollView, } from "react-native";
-import Top from "./components/Top";
+import Top from "./components/Topo";
 import Details from "./components/Details";
 
 const width = Dimensions.get("screen").width;
