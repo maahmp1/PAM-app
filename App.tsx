@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet, StatusBar } from "react-native";
-import PowerUp from "./pages";
+import PowerUp from "./src/pages";
 import React from "react";
 import {
   useFonts,

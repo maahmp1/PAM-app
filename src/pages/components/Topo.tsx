@@ -1,10 +1,14 @@
 import React from "react";
 import { Image, StyleSheet, Dimensions, View } from "react-native";
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 
 const width = Dimensions.get("screen").width;
 
-export default function Top() {
+type Props = {
+  titulo: string
+}
+
+export default function Top({titulo}: Props) {
   return (
     <>
       <Image source={logo} style={styles.topo} />

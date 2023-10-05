@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Card from "../../shared/card";
 import wheyMax from "../../assets/wheyMax.png";
-import creatine from "../../assets/creatine.png";
+import creatine from "../../../assets/creatine.png";
 
 export default function Details() {
   return (
@@ -29,7 +29,7 @@ export default function Details() {
             </View>
           </Card>
 
-          <Card>
+          {/* <Card>
             <View style={styles.teste}>
               <View style={styles.produto}>
                 <Image style={styles.logo} source={wheyMax}></Image>
@@ -39,7 +39,7 @@ export default function Details() {
                 <Text style={styles.preco}>R$80,00</Text>
               </View>
             </View>
-          </Card>
+          </Card> */}
         </View>
       </ScrollView>
     </>
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
   descricao: {
     color: "#A3A3A3",
     fontFamily: "FRegular",
-    textAlign: "center",
+    textAlign:"center",
+    
   },
   // descricao2: {
   //   color: "#A3A3A3",
