@@ -2,7 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, Dimensions, View, ScrollView, } from "react-native";
 import Topo from "./components/Topo";
 import Details from "./components/Details";
-import carrinho from "../mocks/carrinho";
+import carrinho from "../mocks/props";
 
 const width = Dimensions.get("screen").width;
 

@@ -7,6 +7,8 @@ import wheyrefil from "../../assets/wheyrefil.png";
 const props = {
   topo: {
     nome: "Detalhes do Carrinho",
+  },
+  detalhes: {
     descricao: "Creatina Importada 150g - Max Titanium",
     preco: "R$40,00",
     botao: "Comprar",
@@ -19,21 +21,21 @@ const props = {
         imagem: wheyrefil,
       },
       {
-          nome:"Iso Whey",
-          imagem:isowhey,
+        nome: "Iso Whey",
+        imagem: isowhey,
       },
       {
-        nome:"Micellar",
-        imagem:micellar,
-    },
-    {
-        nome:"Colágeno",
-        imagem:colagenoo,
-    },
-    {
-        nome:"Whey Max",
-        imagem:wheyMax,
-    },
+        nome: "Micellar",
+        imagem: micellar,
+      },
+      {
+        nome: "Colágeno",
+        imagem: colagenoo,
+      },
+      {
+        nome: "Whey Max",
+        imagem: wheyMax,
+      },
     ],
   },
 };

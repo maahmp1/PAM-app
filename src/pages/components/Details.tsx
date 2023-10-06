@@ -1,22 +1,22 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  Dimensions,
-  View,
-  ScrollView,
-} from "react-native";
+import {Image, StyleSheet, Text, View, ScrollView, TouchableOpacity} from "react-native";
 import React from "react";
 import Card from "../../shared/card";
 import wheyMax from "../../assets/wheyMax.png";
 import creatine from "../../../assets/creatine.png";
 
-export default function Details() {
+type Props = {
+  nome: string;
+  descricao: string;
+  preco: string;
+
+}
+
+export default function Details({nome}: Props) {
   return (
     <>
       <ScrollView>
         <View style={styles.carrinho}>
-          <Text style={styles.nome}>Carrinho de Compras</Text>
+          <Text style={styles.nome}>{nome}</Text>
           <Card>
             <View style={styles.teste}>
               <View style={styles.produto}>
@@ -28,18 +28,6 @@ export default function Details() {
               </View>
             </View>
           </Card>
-
-          {/* <Card>
-            <View style={styles.teste}>
-              <View style={styles.produto}>
-                <Image style={styles.logo} source={wheyMax}></Image>
-                <Text style={styles.descricao}>
-                  100% Whey Protein 900g - Max Titanium{" "}
-                </Text>
-                <Text style={styles.preco}>R$80,00</Text>
-              </View>
-            </View>
-          </Card> */}
         </View>
       </ScrollView>
     </>
@@ -91,8 +79,7 @@ const styles = StyleSheet.create({
   descricao: {
     color: "#A3A3A3",
     fontFamily: "FRegular",
-    textAlign:"center",
-    
+    textAlign: "center",
   },
   // descricao2: {
   //   color: "#A3A3A3",
