@@ -1,20 +1,19 @@
-import {Image, StyleSheet, Text, View, ScrollView, TouchableOpacity} from "react-native";
+import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import Card from "../../shared/card";
-import wheyMax from "../../assets/wheyMax.png";
 import creatine from "../../../assets/creatine.png";
 
 type Props = {
   nome: string;
   descricao: string;
   preco: string;
-
+  botao:string;
 }
 
-export default function Details({nome}: Props) {
+export default function Detalhes({ botao, nome, descricao, preco }: Props) {
   return (
     <>
-      <ScrollView>
+      
         <View style={styles.carrinho}>
           <Text style={styles.nome}>{nome}</Text>
           <Card>
@@ -22,14 +21,17 @@ export default function Details({nome}: Props) {
               <View style={styles.produto}>
                 <Image style={styles.logo} source={creatine}></Image>
                 <Text style={styles.descricao}>
-                  Creatina Importada 150g - Max Titanium
+                  {descricao}
                 </Text>
-                <Text style={styles.preco2}>R$40,00</Text>
+                <Text style={styles.preco}>{preco}</Text>
+                <TouchableOpacity style={styles.botao}>
+                <Text style={styles.textobotao}>{botao}</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </Card>
         </View>
-      </ScrollView>
+      
     </>
   );
 }
@@ -54,49 +56,37 @@ const styles = StyleSheet.create({
   },
 
   produto: {
-    paddingVertical: 12,
+    // paddingVertical: 12,
     textAlign: "center",
+    alignItems: "center"
   },
 
   logo: {
     //produto que aparece no carrinho
-    margin: 15,
+    margin: 10,
     marginTop: "0%",
     width: 90,
     height: 90,
     alignItems: "center",
     justifyContent: "center",
-    left: 110,
+
   },
 
   nomeProduto: {
     fontSize: 16,
     fontFamily: "FBold",
     lineHeight: 26,
-    marginLeft: 12,
+    // marginLeft: 12,
   },
 
   descricao: {
     color: "#A3A3A3",
     fontFamily: "FRegular",
     textAlign: "center",
+    marginLeft: 5
   },
-  // descricao2: {
-  //   color: "#A3A3A3",
-  //   fontFamily: "FRegular",
-  //   marginLeft: 20,
-  //   textAlign: "center",
-  // },
-
+ 
   preco: {
-    fontSize: 26,
-    fontFamily: "FMedium",
-    color: "#2A9F85",
-    marginTop: 15,
-    marginBottom: 5,
-    textAlign: "center",
-  },
-  preco2: {
     fontSize: 26,
     fontFamily: "FMedium",
     color: "#2A9F85",
@@ -105,4 +95,20 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     textAlign: "center",
   },
+  botao: {
+    marginTop: 16,
+    backgroundColor: '#2a9f85',
+    paddingVertical: 16,
+    borderRadius: 6,
+    width:"100%",
+    marginLeft:8,
+    marginBottom:6
+
+  },
+  textobotao: {
+    textAlign: "center",
+    color: "#ffffff",
+    lineHeight: 26,
+    fontFamily: "MontserratBold"
+  }
 });

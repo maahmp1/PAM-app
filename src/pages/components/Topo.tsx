@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, Dimensions, Text } from "react-native";
+import { Image, StyleSheet, Dimensions, Text, View } from "react-native";
 import logo from "../../../assets/logo.png";
 
 const width = Dimensions.get("screen").width;
@@ -8,12 +8,12 @@ type Props = {
   titulo: string
 }
 
-export default function Top({titulo}: Props) {
+export default function Top({ titulo }: Props) {
   return (
     <>
-      <Image source={logo} style={styles.topo}/>
+      <Image source={logo} style={styles.topo} />
       <Text style={styles.titulo}>{titulo}</Text>
-    </>
+    </>  
   );
 }
 
@@ -32,4 +32,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     padding: 16,
   }
-});
+}
+);
